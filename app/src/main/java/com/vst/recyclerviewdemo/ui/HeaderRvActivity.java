@@ -37,31 +37,31 @@ public class HeaderRvActivity extends Activity {
     private void initView() {
         list = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
-            list.add("content"+i);
+            list.add("content" + i);
         }
 
-        commonAdapter = new CommonAdapter<String>(this,R.layout.item_main,list) {
+        commonAdapter = new CommonAdapter<String>(this, R.layout.item_main, list) {
             @Override
             protected void convert(ViewHolder holder, String s, int position) {
-                holder.setText(R.id.tv_main,s);
+                holder.setText(R.id.tv_main, s);
             }
         };
 
 
         rv_common = (RecyclerView) findViewById(R.id.rv_common);
-        PullUpAdapter<String> pullUpAdapter = new PullUpAdapter<String>(rv_common,R.layout.item_main,list) {
+        PullUpAdapter<String> pullUpAdapter = new PullUpAdapter<String>(rv_common, R.layout.item_main, list) {
             @Override
             protected void convert(ViewHolder holder, String s, int position) {
-                holder.setText(R.id.tv_main,s);
+                holder.setText(R.id.tv_main, s);
             }
         };
 
-        HeaderAndFooterWrapper<String> headerAndFooterWrapper = new HeaderAndFooterWrapper<>(commonAdapter);
+        HeaderAndFooterWrapper headerAndFooterWrapper = new HeaderAndFooterWrapper(commonAdapter);
         TextView textView = new TextView(this);
         textView.setText("headereee");
         headerAndFooterWrapper.addHeaderView(textView);
 
-        rv_common.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        rv_common.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rv_common.setAdapter(headerAndFooterWrapper);
     }
 }
