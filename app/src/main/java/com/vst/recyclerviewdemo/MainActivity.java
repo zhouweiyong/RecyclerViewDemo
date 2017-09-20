@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.vst.recyclerviewdemo.ui.HeaderRvActivity;
 import com.vst.recyclerviewdemo.ui.MultiltemRvActivity;
+import com.vst.recyclerviewdemo.ui.OMultilActivity;
 import com.vst.recyclerviewdemo.ui.PullUpRvActivity;
 import com.vst.recyclerviewdemo.ui.RefreshRvActivity;
 import com.vst.recyclerviewlib.CommonAdapter;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements MultiItemTypeAdap
     }
 
     private void initView() {
-        String[] arr = new String[]{"Header RecyclerView", "PullUp RecyclerView", "Refresh RecyclerView", "Multiltem RecyclerView"};
+        String[] arr = new String[]{"Header RecyclerView", "PullUp RecyclerView", "Refresh RecyclerView", "Multiltem RecyclerView", "混合布局"};
         list = Arrays.asList(arr);
 
         rv_main = (RecyclerView) findViewById(R.id.rv_main);
@@ -68,6 +69,9 @@ public class MainActivity extends AppCompatActivity implements MultiItemTypeAdap
                 break;
             case 3:
                 intent.setClass(this, MultiltemRvActivity.class);
+                break;
+            case 4:
+                intent.setClass(this, OMultilActivity.class);
                 break;
         }
         startActivity(intent);

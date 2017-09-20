@@ -7,7 +7,8 @@ package com.vst.recyclerviewdemo.bean;
  * class description:请输入类描述
  */
 public class ChatBean {
-
+    public final static int SEND = 0;
+    public final static int COME = 1;
     private int icon;
     private String name;
     private String content;
