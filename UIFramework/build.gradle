@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '23.0.2'
 
     defaultConfig {
         minSdkVersion 12
@@ -23,8 +22,8 @@ android {
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile files('libs/nineoldandroids-2.4.0.jar')
-    compile project(':recyclerviewlib')
+    testImplementation 'junit:junit:4.12'
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api files('libs/nineoldandroids-2.4.0.jar')
+    api project(':recyclerviewlib')
 }
